@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
 	tweet.retweets = 0;
 	tweet.likes = 0;
 	data.chirps.push(tweet);
-	res.render('index');
+	res.render('index', data);
 });
 
 module.exports = router;
