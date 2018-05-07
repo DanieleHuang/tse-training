@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var index = require('./routes/index');
-
+var posts = require('./routes/posts');
 var app = express();
 
 // view engine setupb
@@ -19,5 +19,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/posts', posts);
 
 module.exports = app;
