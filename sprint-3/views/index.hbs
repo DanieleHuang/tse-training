@@ -2,10 +2,67 @@
 <html lang="en">
 
 <head>
+  <style>
+    i {
+      display: inline;
+      margin: 0.3em;
+    }
+
+    .container {
+      margin: 1em;
+      width: 65em !important;
+    }
+    .card {
+      width: 35em;
+      padding: 0.5em 1.25em 0.25em 1.25em;
+    }
+
+    #retweet {
+      font-size: 0.85em;
+      margin: 0.7em auto 1.7em -0.2em;
+      opacity: 0.7;
+    }
+
+    #icons {
+      font-size: 0.85em;
+      margin-top: -1em;
+      margin-bottom: -0.3em;
+      opacity: 0.7;
+    }
+
+    #user {
+      font-size: 1.1em;
+      margin-top: -0.7em;
+      margin-bottom: 0.8em;
+    }
+
+    #tweet {
+      font-size: 1.3em;
+      margin-top: -0.7em;
+      margin-bottom: 0.8em;
+    }
+  </style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 </head>
 
 <body class="container" style="background: #fcfcfc">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="../public/images/profile.jpeg">
+      </div>
+      <div class="col-md-9">
+        <div class="card">
+          <p id="retweet"><i class="fas fa-retweet"></i>gary retweeted</p>
+          <p id="user">KANYE WEST (@kanyewest)</p>
+          <p id="tweet">You have distracted from my creative process</p>
+          <div class="row" id="icons">
+            <p class="col-sm-2"><i class="far fa-comment"></i>155</p>
+            <p class="col-sm-2"><i class="fas fa-retweet"></i>28K</p>
+            <p class="col-sm-3"><i class="far fa-heart"></i>27K</p>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
