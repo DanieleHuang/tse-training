@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var data = require('../chirps.json')
 
-app.use(bodyParser.urlencoded({extended: true}));
+//router.use(bodyParser.urlencoded({extended: true}));
 
 router.post('/add', function(req, res, next) {
 	data.chirps.push({"isRetweet": false,
@@ -14,7 +14,11 @@ router.post('/add', function(req, res, next) {
 					  "comments": "0",
 					  "retweets": "0",
 					  "likes": "0"});
-	next();
+	res.render('index', data);
+});
+
+router.get('/add', function(req, res) {
+	res.render('add', data);
 });
 
 module.exports = router;
