@@ -6,7 +6,7 @@ var data = require('../chirps.json')
 
 //router.use(bodyParser.urlencoded({extended: true}));
 
-router.post('/add', function(req, res, next) {
+router.post('/', function(req, res, next) {
 	data.chirps.push({"isRetweet": false,
 					  "author_name": req.body.author_name,
 					  "author_handle": req.body.author_handle,
@@ -17,7 +17,7 @@ router.post('/add', function(req, res, next) {
 	res.render('index', data);
 });
 
-router.get('/add', function(req, res) {
+router.get('/', function(req, res) {
 	res.render('add', data);
 });
 
