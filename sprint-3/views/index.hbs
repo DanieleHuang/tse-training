@@ -49,19 +49,21 @@
 <body class="container" style="background: #fcfcfc">
     <div class="row">
       <div class="col-md-3">
-        <img src="../public/images/profile.jpeg">
+        <img src="images/profile.jpeg" alt="gary">
       </div>
       <div class="col-md-9">
-        <div class="card">
-          <p id="retweet"><i class="fas fa-retweet"></i>gary retweeted</p>
-          <p id="user">{{author_name}} (@{{author_handle}})</p>
-          <p id="tweet">{{text}}</p>
-          <div class="row" id="icons">
-            <p class="col-sm-2"><i class="far fa-comment"></i>{{comments}}</p>
-            <p class="col-sm-2"><i class="fas fa-retweet"></i>{{retweets}}</p>
-            <p class="col-sm-3"><i class="far fa-heart"></i>{{likes}}</p>
+        {{#each chirps}}
+          <div class="card">
+            <p id="retweet"><i class="fas fa-retweet"></i>gary retweeted</p>
+            <p id="user">{{author_name}} (@{{author_handle}})</p>
+            <p id="tweet">{{text}}</p>
+            <div class="row" id="icons">
+              <p class="col-sm-2"><i class="far fa-comment"></i>{{comments}}</p>
+              <p class="col-sm-2"><i class="fas fa-retweet"></i>{{retweets}}</p>
+              <p class="col-sm-3"><i class="far fa-heart"></i>{{likes}}</p>
+            </div>
           </div>
-        </div>
+        {{/each}}
       </div>
     </div>
 </body>
