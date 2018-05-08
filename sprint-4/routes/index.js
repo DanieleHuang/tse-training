@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 	MongoClient.connect(murl, (err, client) => {
 		if (err) console.log(err);
 		db = client.db('tse-training');
-		db.collection('chirps').find().toArray(function(err, results) {
+		db.collection('chirps').find().sort({'_id': -1}).toArray(function(err, results) {
 			res.render('index', {"chirps": results});
 		});
 	});
