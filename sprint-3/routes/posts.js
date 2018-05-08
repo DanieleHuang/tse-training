@@ -13,9 +13,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-    console.log(req.body);
-    const content = JSON.stringify(req.body);
-    fs.writeFileSync('../chirps.json', content)
-})
+    var tweet = req.body;
+    tweet.isRetweet = false;
+    tweet.comments = 0;
+    tweet.retweets = 0;
+    tweet.likes = 0;
+    data.chirps.push(tweet);
+    res.render('index', data);
+});
 
 module.exports = router;
