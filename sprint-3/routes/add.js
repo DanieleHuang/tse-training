@@ -13,8 +13,8 @@ router.post('/', function(req, res, next) {
 	tweet.comments = 0;
 	tweet.retweets = 0;
 	tweet.likes = 0;
-	data.chirps.push(tweet);
-	res.render('index', data);
+	data.chirps.unshift(tweet);
+	res.redirect('/');
 });
 
 module.exports = router;
