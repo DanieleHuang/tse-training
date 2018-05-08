@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+</head>
+
+<body class="container mb-5 mt-3" style="background: #fcfcfc">
+	<div class="row justify-content-center">
+		<div class="col-3" id="profile">
+			<img class="rounded" src="/images/profile.jpeg"/>
+		</div>
+		<div class="col-9" id="tweets">
+			{{#each chirps}}
+			<div class="card text-left col-9">
+				<div class="card-body">
+					{{#if isRetweet}}
+					<p class="retweeted text-muted">
+						<i class="fas fa-retweet"></i>
+						gary retweeted
+					</p>
+					{{/if}}
+					<h5>{{author_name}} (@{{author_handle}})</h5>
+					<h4 class="card-text meal-title">{{text}}</h4>
+					<div class="row">
+							<div class="col-2">
+							<h6 class="card-subtitle text-muted text-center">
+								<i class="far fa-comment"></i>
+								{{comments}}
+							</h6>
+						</div>
+						<div class="col-2">
+							<h6 class="card-subtitle text-muted text-center">
+								<i class="fas fa-retweet"></i>
+								{{retweets}}
+							</h6>
+						</div>
+						<div class="col-2">
+							<h6 class="card-subtitle text-muted text-center">
+								<i class="far fa-heart"></i>
+								{{likes}}
+							</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</body>
+</html>
