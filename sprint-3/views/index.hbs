@@ -4,66 +4,34 @@
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
         </head>
-        <script>
-            function retweet() {
-                var x = document.getElementById("retweet");
-                if ({{isRetweet}} === "false") {
-                    x.style.display = "block";
-                } 
-            }
-
-            for (i in data) {
-                var x=" ";
-                x += "<h3>" + data[i] + "<h3>";
-            }
-            doucment.getElementByID("demo").innerHTML = x;
-        </script>
-        <script id="handlebars-sprint-3" type="text/x-handlebars-template">
-            <body class="container" style="background: #fcfcfc">
-            <div class="col-sm-3">
-                <img class="img-thumbnail" alt="Cinque Terre">
-            </div>
-            <div class="col-lg-9">
-                <div class="row-sm-4">
-                    <i id="retweet" class="fas fa-retweet">gary retweeted</i>
-                    {{author_name}} (@{{author_handle}})
-                    {{text}}
-                    <i class="fas fa-comments"></i>{{comments}}
-                    <i class="fas fa-retweet"></i>{{retweets}}
-                    <i class="fas fa-heart"></i>{{likes}}
+        <body class="container" style="background: #fcfcfc">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="images/profile.jpeg"class="img-thumbnail" alt="Cinque Terre">
                 </div>
-                <div class="row-sm-4">
-                    <i id="retweet" class="fas fa-retweet">gary retweeted</i>
-                    {{author_name}} (@{{author_handle}})
-                    {{text}}
-                    <i class="fas fa-comments"></i>{{comments}}
-                    <i class="fas fa-retweet"></i>{{retweets}}
-                    <i class="fas fa-heart"></i>{{likes}}
+                <div class="col-lg-9">
+                    {{#each chirps}}
+                        <div class="card">
+                            {{#if isRetweet}}
+                            <p><i id="retweet" class="fas fa-retweet">gary retweeted</i></p>
+                            {{/if}}
+                            <h5>{{author_name}} (@{{author_handle}})</h5> 
+                            <h4 class="card-text">{{text}}</h4> 
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fas fa-comments"></i>{{comments}}
+                                </div>
+                                <div class="col-2">
+                                    <i class="fas fa-retweet"></i>{{retweets}}
+                                </div>
+                                <div class="col-2">
+                                    <i class="fas fa-heart"></i>{{likes}} 
+                                </div>
+                            </div>  
+                        </div>
+                        <br>
+                    {{/each}}
                 </div>
-                <div class="row-sm-4">
-                    <i id="retweet" class="fas fa-retweet">gary retweeted</i>
-                    {{author_name}} (@{{author_handle}})
-                    {{text}}
-                    <i class="fas fa-comments"></i>{{comments}}
-                    <i class="fas fa-retweet"></i>{{retweets}}
-                    <i class="fas fa-heart"></i>{{likes}}
-                </div>
-                <div class="row-sm-4">
-                    <i id="retweet" class="fas fa-retweet">gary retweeted</i>
-                    {{author_name}} (@{{author_handle}})
-                    {{text}}
-                    <i class="fas fa-comments"></i>{{comments}}
-                    <i class="fas fa-retweet"></i>{{retweets}}
-                    <i class="fas fa-heart"></i>{{likes}}
-                  </div>
-                <div class="row-sm-4">
-                    <i id="retweet" class="fas fa-retweet">gary retweeted</i>
-                    {{author_name}} (@{{author_handle}})
-                    {{text}}
-                    <i class="fas fa-comments"></i>{{comments}}
-                    <i class="fas fa-retweet"></i>{{retweets}}
-                    <i class="fas fa-heart"></i>{{likes}}
-                 </div>
             </div>
         </body>
     </script>
