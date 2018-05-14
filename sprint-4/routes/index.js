@@ -13,12 +13,7 @@ MongoClient.connect(url, (err, client) => {
 //var data = require('../chirps.json')
 
 router.get('/', function(req, res, next) {
-	let arr = db.collection('tweets').find({}).sort({'_id': -1}).toArray((err, docs) => {
-		console.log(docs.length);
-		docs.forEach((yes) => {
-			console.log(yes);
-		})
-	});
+	let arr = db.collection('tweets').find({}).sort({'_id': -1}).toArray();
 
 	res.render('index', {"chirps": arr});
 });
