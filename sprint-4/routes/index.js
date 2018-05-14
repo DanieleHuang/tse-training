@@ -13,9 +13,9 @@ MongoClient.connect(url, (err, client) => {
 //var data = require('../chirps.json')
 
 router.get('/', function(req, res, next) {
-	let arr = db.collection('tweets').find({}).sort({'_id': -1}).toArray();
-
-	res.render('index', {"chirps": arr});
+	db.collection('tweets').find({}).sort({'_id': -1}).toArray((err, results) => {
+		res.render('index', {"chirps": results});
+	});
 });
 
 module.exports = router;
