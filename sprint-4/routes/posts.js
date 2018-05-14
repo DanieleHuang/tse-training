@@ -10,9 +10,7 @@ var db;
 MongoClient.connect("mongodb://jiaqihuangjqh:2397056Hjq@ds121960.mlab.com:21960/garyflyer", (err, client) => {
     if (err) return console.log(err, "here")
     db = client.db('garyflyer') // whatever your database name is
-    app.listen(3000, () => {
-        console.log('listening on 3000')
-    })
+
 })
 
 /* GET /about/
