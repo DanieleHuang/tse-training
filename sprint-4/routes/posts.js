@@ -7,8 +7,8 @@ const fs = require('fs');
 const MongoClient = require('mongodb').MongoClient
 
 var db;
-MongoClient.connect("mongodb://<dbuser>:<dbpassword>@ds121960.mlab.com:21960/garyflyer", (err, client) => {
-    if (err) return console.log(err)
+MongoClient.connect("mongodb://jiaqihuangjqh:2397056Hjq@ds121960.mlab.com:21960/garyflyer", (err, client) => {
+    if (err) return console.log(err, "here")
     db = client.db('garyflyer') // whatever your database name is
     app.listen(3000, () => {
         console.log('listening on 3000')
@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     tweet.retweets = 0;
     tweet.likes = 0;
     db.collection('posters').save(tweet, (err, result) => {
-        if (err) return console.log(err)
+        if (err) return console.log(err, "here2")
         console.log('saved to database')
         res.redirect('index', data)
     })
