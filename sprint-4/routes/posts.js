@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     db.collection('posters').save(tweet, (err, result) => {
         if (err) return console.log(err, "here2")
         console.log('saved to database')
-        res.redirect('index', data)
+        res.redirect('/')
     })
 })
 
